@@ -1,0 +1,42 @@
+.parallax {
+  /* The image used */
+  background-image: url("https://www.servicefromhome.com/images/banner.jpg");
+  /* Set a specific height */
+  min-height:250px;
+  color:black;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  width:100%;
+  margin:2% 0 2% 0 ;
+  padding:2%;
+  box-shadow: 3px 3px 9px 4px #888888;
+  overflow: auto;
+  padding-top:5%;
+  padding-bottom:3%;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom:25px;
+  margin-top:50px;
+  display:block;
+
+}
+
+.body{
+  font-size: 18px;
+}
+h1{
+  width:100%;
+  text-align:center;
+  color: #2d2d2d;
+  font-weight: 200;
+  padding-top: 0px;
+  margin: 0px;
+  margin-bottom:20px;
+  display:block;
+  font-size: 32px;
+}

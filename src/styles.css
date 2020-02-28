@@ -11,6 +11,11 @@
 
 body {
   margin: 0;
+  background-color:#e8d4c2; 
+}
+
+p, div, li{
+  font-size: 18px;
 }
 
 .container {

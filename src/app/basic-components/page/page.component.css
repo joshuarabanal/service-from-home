@@ -1,12 +1,10 @@
 /* what the page looks like when screen is small*/
 .page{
-  width:92%;
-  background-color:white;
-  margin:2%;
+  width:100%;
+  margin:2% 0 2% 0 ;
   padding:2%;
   box-shadow: 3px 3px 9px 4px #888888;
   overflow: auto;
-  border-radius:5px;
   padding-top:5%;
   padding-bottom:3%;
   font-size:110%;
@@ -21,7 +19,7 @@ p{
 }
 
 .body{
-  font-size:50%;
+  font-size:18px;
 }
 .pageTitle, pagetitle{
   width:100%;
@@ -32,7 +30,7 @@ p{
   margin: 0px;
   margin-bottom:20px;
   display:block;
-  font-size: 90%;
+  font-size: 32px;
 }
 
 
