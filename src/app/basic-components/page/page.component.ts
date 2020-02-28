@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PageComponent implements OnInit {
   @Input("title") title: string;
   @Input("background") background:string;
+  @Input("text-color") textColor:string;
   //@Input("menu-item-names") menuNames: string[];
 
   //@Input("menu-item-links") nemuLinks: string;

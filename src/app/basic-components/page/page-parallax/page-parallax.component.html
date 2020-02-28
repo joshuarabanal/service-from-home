@@ -1,6 +1,8 @@
 
   
   <div class="parallax" title="{{title}}" [style.backgroundImage]="getImg()">
-    <h1 *ngIf="title">{{title}}</h1>
-    <ng-content class="body"></ng-content>
+    <div class="colorFilter" [style.backgroundColor] = "colorFilter? colorFilter : 'transparent'">
+      <h1 *ngIf="title">{{title}}</h1>
+      <ng-content class="body"></ng-content>
+    </div>
   </div>

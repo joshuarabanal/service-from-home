@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PageParallaxComponent implements OnInit {
   @Input("title") title:string;
   @Input("img") img:string;
+  @Input("color-filter") colorFilter:string;
   constructor() { }
   getImg(){
     return "url('"+this.img+"')"
