@@ -1,0 +1,12 @@
+<div id="actionbar" [class]="disableFade? 'opaque': actionbarClass">
+  <img *ngIf="actionIcon" src="{{actionIcon}}"/>
+  <h1 >{{title? title : "Set title attribute"}}</h1>
+
+
+  <div class="actionbuttonsBox"  >
+    <ng-content selector="[frame-body]"></ng-content> <!-- the inner html becomes the action menu buttons-->
+  </div>
+
+
+</div>
+<div *ngIf="addSpacer" class="spacer"></div>
