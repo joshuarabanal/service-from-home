@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ActionBarComponent } from './basic-components/action-bar/action-bar.component';
-import { ActionButton } from './basic-components/action-bar/action-button/action-button.compontent';
+import { ActionButton } from './basic-components/action-bar/action-button/action-button.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
