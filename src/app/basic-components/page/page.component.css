@@ -1,0 +1,63 @@
+/* what the page looks like when screen is small*/
+.page{
+  width:92%;
+  background-color:white;
+  margin:2%;
+  padding:2%;
+  box-shadow: 3px 3px 9px 4px #888888;
+  overflow: auto;
+  border-radius:5px;
+  padding-top:5%;
+  padding-bottom:3%;
+  font-size:110%;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom:25px;
+  margin-top:50px;
+  display:block;
+
+}
+p{
+  line-height: 21px;
+}
+
+.body{
+  font-size:50%;
+}
+.pageTitle, pagetitle{
+  width:100%;
+  text-align:center;
+  color: #2d2d2d;
+  font-weight: 200;
+  padding-top: 0px;
+  margin: 0px;
+  margin-bottom:20px;
+  display:block;
+  font-size: 90%;
+}
+
+
+
+
+@media only screen and (min-width: 400px) {/*activates when screen is larger than min-width*/
+}
+
+@media only screen and (min-width: 550px) {/*activates when screen is larger than min-width*/
+}
+
+@media only screen and (min-width: 650px) {/* activates for large screens(0.5 chromebook)*/
+    
+    .page, page {
+      width:100%;
+      box-shadow: none;
+      border-style: none none solid none;
+      border-color:black;
+      border-width:1px;
+      padding-bottom:10%;
+      margin:0;
+      margin-bottom:0px;
+      line-height: 130%;
+      font-weight: 200;
+      border-radius: 0;
+    }
+    
+}
