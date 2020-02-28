@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ActionBarComponent } from './basic-components/action-bar/action-bar.component';
 import { ActionButton } from './basic-components/action-bar/action-button/action-button.component';
+import { PageComponent } from './basic-components/page/page.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -13,7 +14,7 @@ import { ActionButton } from './basic-components/action-bar/action-button/action
     AppComponent, 
 
     //basic-components/
-    ActionButton, ActionBarComponent 
+    ActionButton, ActionBarComponent, PageComponent 
 
   ],
   bootstrap:    [ AppComponent ]

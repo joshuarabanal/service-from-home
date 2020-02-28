@@ -1,0 +1,8 @@
+<div class="page" [style.background]="background? background: ''">
+    
+  <h1 *ngIf="title" id="page1head" class="pageTitle">{{title}}</h1>
+  <div class="body">
+  <ng-content  selector="[frame-body]"></ng-content> <!-- the inner html -->
+  </div>
+      
+</div>
