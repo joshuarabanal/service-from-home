@@ -1,0 +1,28 @@
+:host{
+  margin-right:15px;
+}
+
+a{
+      height: 36px;
+    font-size: 25px;
+    font-weight: 200px;
+    color:  black;
+
+}
+
+
+@keyframes colorchange
+    {
+      0%   {
+          color:black;
+        }
+
+      100% {
+        color:  var(--action-bar-text-color,white);
+        }
+    }
+a.opaque {
+  animation: colorchange 1s;
+        color:var(--action-bar-text-color,white); /* var(--action-bar-text-color,white);*/
+  /*background-color:var(--action-bar-background, #1976d2);*/
+}
