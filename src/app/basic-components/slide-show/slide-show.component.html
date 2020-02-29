@@ -1,6 +1,10 @@
 
-<h1> hello world and all who inhabit it{{getLength()}}</h1>
-<h1>{{getLength()}}</h1>
-<div *ngFor="let slide of slides; index as i">
-  <p> is this working because I fear it wont</p>
-</div>
+<h1> hello world and all who inhabit it</h1>
+<p>{{getLength()}}</p>
+<p>{{page}}</p>
+  <input input type="radio" id="male" name="gender" value="male">
+
+  <input type="radio" id="male" name="gender" value="male">
+  <input type="radio" id="male" name="gender" value="male">
+  <div [style.visibility] = "radioSelected(0)? 'visible' : 'gone'">
+
