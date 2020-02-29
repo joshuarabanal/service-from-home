@@ -3,7 +3,7 @@
 <p>{{getLength()}}</p>
 <p>{{page}}</p>
 <p>{{info}}</p>
-  <input *ngFor="let item of getPages(); let i = index" 
+  <input #slide-item *ngFor="let item of getPages(); let i = index" 
       type="radio" 
       name="group" 
       (click)="radioSelected(i)"/>

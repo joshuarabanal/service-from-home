@@ -22,7 +22,7 @@ class Slide {
 export class SlideShowComponent implements OnInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
-  @ViewChildren("div") pages: QueryList<any>
+  @ViewChildren("slide-item") pages: QueryList<any>
 
   getPages(){
     return JSON.parse(this.page);
