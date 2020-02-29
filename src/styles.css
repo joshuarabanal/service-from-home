@@ -7,6 +7,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --action-bar-background:#9cb0ae;
+  --action-bar-text-color:white;
 }
 
 body {

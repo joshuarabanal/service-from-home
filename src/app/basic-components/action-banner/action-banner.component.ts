@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ActionBannerComponent implements OnInit {
   @Input("title") title:String;
   @Input("href") href:string;
-  @Input("button-itle") buttonTitle: string;
+  @Input("button-title") buttonTitle: string;
 
   constructor() { }
 
