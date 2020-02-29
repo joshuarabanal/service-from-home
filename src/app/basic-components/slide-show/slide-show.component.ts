@@ -1,9 +1,8 @@
 import { Component, OnInit, Directive, ViewChildren, QueryList, Input } from '@angular/core';
 
 
-@Directive({selector: 'slide'})
+@Directive({selector: 'page'})
 class Slide {
-  @Input("title") title: string;
 }
 
 
@@ -17,8 +16,11 @@ export class SlideShowComponent implements OnInit {
   @ViewChildren(Slide) slides !: QueryList<Slide>;
 
   getLength(){ 
-    window.alert("`slides length:"+this.slides.length);
-    return this.slides.length;}
+    if(!this.slides){
+      return -1;
+    }
+    return this.slides.length;
+    }
 
 
   constructor() { }
