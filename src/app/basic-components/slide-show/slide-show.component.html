@@ -2,9 +2,11 @@
 <h1> hello world and all who inhabit it</h1>
 <p>{{getLength()}}</p>
 <p>{{page}}</p>
-  <input input type="radio" id="male" name="gender" value="male">
+<p>{{info}}</p>
+  <input *ngFor="let item of getPages(); let i = index" 
+      type="radio" 
+      name="group" 
+      (click)="radioSelected(i)"/>
 
-  <input type="radio" id="male" name="gender" value="male">
-  <input type="radio" id="male" name="gender" value="male">
-  <div [style.visibility] = "radioSelected(0)? 'visible' : 'gone'">
+   <ng-content></ng-content>
 
