@@ -48,3 +48,27 @@ p {
   line-height: normal;
   text-indent:4em;
 }
+
+/* Button */
+.button, button{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size:24px;
+  cursor: pointer;
+  background-color:  var(--action-bar-text-color, black);
+  color:var(--action-bar-background, white);
+  border: none;
+  text-decoration: none;
+}
+
+.button:hover, button:hover{
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
