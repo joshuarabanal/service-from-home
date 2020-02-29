@@ -1,12 +1,13 @@
 
 <h1> hello world and all who inhabit it</h1>
-<p>{{getLength()}}</p>
-<p>{{page}}</p>
-<p>{{info}}</p>
-  <input #slide-item *ngFor="let item of getPages(); let i = index" 
+<div>length: {{getLength()}}</div>
+<div>page: {{page}}</div>
+<p>info: {{info}}</p>
+  <input #radioItem *ngFor="let item of getPages(); let i = index" 
       type="radio" 
       name="group" 
-      (click)="radioSelected(i)"/>
+      (click)="radioSelected(i,item)"/>
   <div > test</div>
+  <ng-content #contentChildren></ng-content>
 
 

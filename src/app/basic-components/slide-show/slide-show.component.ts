@@ -1,4 +1,4 @@
-import { Component, OnInit, Directive, ViewChildren, QueryList, Input } from '@angular/core';
+import { Component, OnInit, Directive, ViewChildren, QueryList, Input , ContentChildren, } from '@angular/core';
 
 
 @Directive({
@@ -7,6 +7,22 @@ import { Component, OnInit, Directive, ViewChildren, QueryList, Input } from '@a
 export class PageIds {
 }
 
+
+@Component({
+  selector: 'slide-show-page',
+  templateUrl:'./slide-show-page/page.html',
+  styleUrls:['./slide-show-page/page.css']
+})
+export class SlideShowPageComponent {
+  active:boolean;
+  public className:string;
+  @Input("page-id") pageId;
+  getElemClass(){ return this.active? "visible": "gone"; }
+  constructor(){
+    this.className = "gone";
+  }
+
+}
 /*
 @Directive({selector: 'input'})
 class Slide {
@@ -22,9 +38,11 @@ class Slide {
 export class SlideShowComponent implements OnInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
-  @ViewChildren("slide-item") pages: QueryList<any>
+  @ViewChildren("radioItem") pages: QueryList<any>
+  @ContentChildren(SlideShowPageComponent) contentChildren !: QueryList<SlideShowPageComponent>;
+  @ContentChildren(PageIds) pageIds !: QueryList<PageIds>;
 
-  getPages(){
+  getPages(): any[]{
     return JSON.parse(this.page);
   }
 
@@ -33,11 +51,26 @@ export class SlideShowComponent implements OnInit {
   }
 
 
-  radioSelected(item){
+  radioSelected(index, item){
     console.log("radio selected:"+item);
     console.log("pages", this.pages);
+    console.log("content childs:",this.contentChildren)
 
-    this.info = "selected:"+item;
+    this.contentChildren.forEach(
+      function(item: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
+          console.log("loop")
+          console.log("item["+index+"]:", item);
+          if(item.pageId == item){
+            item.className = "visible";
+            console.log("found item:", item)
+          }
+          else{
+            console.log(item.pageId+"!="+item);
+            item.className = "gone";
+          }
+      }
+    );
+
   }
 
  // @ViewChildren(Slide) slides !: QueryList<Slide>;
