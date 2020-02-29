@@ -9,6 +9,7 @@ import { ActionButton } from './basic-components/action-bar/action-button/action
 import { PageComponent } from './basic-components/page/page.component';
 import { Parallax } from './basic-components/parallax/parallax.component';
 import { PageParallaxComponent } from './basic-components/page/page-parallax/page-parallax.component';
+import { ActionBannerComponent } from './basic-components/action-banner/action-banner.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -16,7 +17,7 @@ import { PageParallaxComponent } from './basic-components/page/page-parallax/pag
     AppComponent, 
 
     //basic-components/
-    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent 
+    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent, ActionBannerComponent 
 
   ],
   bootstrap:    [ AppComponent ]
