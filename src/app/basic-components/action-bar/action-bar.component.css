@@ -10,7 +10,7 @@ can be found in the LICENSE file at http://angular.io/license
   left:0;
   width: 100%;
   height: 68px;
- background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.24) 50%, rgba(255,255,255,0.0) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.24) 50%, rgba(255,255,255,0.0) 100%);
   padding: 16px;
   display: block;
   flex-direction: row;
