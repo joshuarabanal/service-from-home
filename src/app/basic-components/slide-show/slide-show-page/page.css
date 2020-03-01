@@ -1,18 +1,22 @@
 :host{
-
     width:100%;
 }
 .visible{
   height:100%;
   width: 100%;
-  background-color:green;
+  background-color:transparent;
   display: block;
     visibility: inherit;
+    opacity: 1;
 }
 .gone{
   width:0;
   height:0;
-  background-color:red;
+  background-color:transparent;
+  opacity: 0;
   display:block;
   visibility: hidden;
+}
+div{
+  
 }

@@ -3,16 +3,56 @@
   <action-button title="Log In" href="login"></action-button>
   <action-button title="Sign Up" href="signup"></action-button>
 </action-bar>
-<parallax img="https://www.servicefromhome.com/images/banner.jpg">
 
-<slide-show page-ids='["mama", "papa"]' background="{{getAsset('img/slide-show-background.png')}}">
-  <slide-show-page page-id="mama">
-    test page mama 1
+<slide-show page-ids='["modernize", "control", "break"]'>
+
+
+<!-- old="http://akcelita.com/img/slider-image-01.jpg"-->
+  <slide-show-page class="slideVerticalCenter" page-id="modernize" 
+    background-image="{{getAsset('img/slides/modern.jpg')}}" 
+    style="color:white;" 
+   >
+    <div class="greyHighlight">
+      <h1>Modernize your Revenue Stream </h1>
+      <p>
+        Gone are the days of long stressfull commutes. Earn an Income while never stepping a foot outside of your house.
+      </p>
+    </div>
   </slide-show-page>
-  <slide-show-page  page-id="papa">
-    test page papa 2
+
+<!--
+  old="https://wallpapercave.com/wp/wp1871756.jpg"
+    old="https://wallpapercave.com/wp/wp1871756.jpg"
+    -->
+  <slide-show-page class="slideVerticalCenter" page-id="control" 
+    background-image="{{getAsset('img/slides/control.jpg')}}" 
+    >
+      <div class="greyHighlight" style="color:black;">
+        <h1>Take Back the Control over your life</h1>
+        <p  style="width:100% text-align:center-vertical;" >
+          Select when you want to work. Have your income work around your schedule, not your income imposing itself on your life. 
+        </p>
+      </div>
   </slide-show-page>
+  
+<!--
+    old="http://wallpapersexpert.com/images/file/52/2800x2100-3745776-modern-wallpapers.jpg"
+    -->
+  <slide-show-page class="slideVerticalCenter" 
+    page-id="break"
+    background-image="{{getAsset('img/slides/break-through.png')}}" 
+  >
+    <div class="greyHighlight" style="color:white;">
+      <h1>Break through the monotony</h1>
+      <p  style="width:100% text-align:center-vertical;" >
+        Service several providers that match your interests. Learn and grow as you traverse through different clients. 
+      </p>
+    </div>
+
+  </slide-show-page>
+
 </slide-show>
+
 
 
 <page title="Who We Are">
@@ -53,11 +93,10 @@ We take away the friction that typical work places have due to micromanagement a
 
 
 </page-parallax>
-<page title="Different from Traditional Call Centers" background="#61636d" text-color="#efefef">
+<page title="Different from Traditional Call Centers" background="#61636d" text-color="black">
   <p>
     In traditional call centers, you are in a crowded, noisy, room with people who are not the most friendly. and your managers are constantly bothering you and talking to you while you speak to customers. This creates an stressful environment for all of the employess. This is the reason why most people quit their jobs at a call center. It is not due to the customers that they speak to, but the added stress the work environment creates.
   </p>
 </page>
 <action-banner title="Create new Account" button-title="Sign Up" href="signup"></action-banner>
-</parallax>
 

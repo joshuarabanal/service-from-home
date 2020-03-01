@@ -1,11 +1,17 @@
 :host{
   width:100%;
   display:block;
-
+  background-color:darkgray;
+  /*background-image: url(https://s3.amazonaws.com/assets.composemusic.org/arise/img/slide-show-background.png);
+*/
 }
 .slideBox{
   display:flex;
   flex-wrap:  nowrap;
+  min-height: 100vh;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
 
 }
 .radioGroup{
@@ -25,4 +31,8 @@ img{
 }
 .background{
   display:block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;;
+  height: auto;
 }

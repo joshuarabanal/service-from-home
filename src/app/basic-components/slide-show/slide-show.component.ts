@@ -5,6 +5,7 @@ import { Component, Directive, ViewChildren,
 
 
 
+
 //this is the class for the individual slideshow pages 
 @Component({
   selector: 'slide-show-page',
@@ -15,6 +16,7 @@ export class SlideShowPageComponent {
   active:boolean;
   public className:string;
   @Input("page-id") pageId;
+  @Input("background-image") backgroundImage;
   getElemClass(){ return this.active? "visible": "gone"; }
   constructor(){
     this.className = "gone";
@@ -37,7 +39,7 @@ export class InputRadio {
 export class SlideShowComponent implements AfterViewInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
-  @Input("background") background:string;
+   background:string;
   @ViewChildren("radioitem") radioButtons: QueryList<ElementRef>
   @ContentChildren(SlideShowPageComponent) contentChildren !: QueryList<SlideShowPageComponent>;
 
@@ -63,8 +65,7 @@ export class SlideShowComponent implements AfterViewInit {
     if(!this.background){
       return "black";
     }
-    console.log("background:"+ this.background);
-    return "url('"+this.background);"
+    return "url("+this.background+")";
   }
   getPages(): any[]{
     return JSON.parse(this.page);
@@ -86,39 +87,55 @@ export class SlideShowComponent implements AfterViewInit {
   setSelectedValue(value:string){
     this.getInputByValue(value).checked = true;
   }
+  getSlideShowPage(pageId:string){
+    let pages = this.contentChildren.toArray();
+    for(var i = 0; i<pages.length; i++){
+      if(pages[i].pageId == pageId){
+        return pages[i];
+      }
+    }
+  }
   arrowClick(left:boolean){
+    console.log("arrow clicked", left);
     var these= this;
     var pages = this.getPages();
-    this.radioButtons.forEach(
-      function(elem){
-        let element = elem.nativeElement;
+    let radioarray = this.radioButtons.toArray()
+    for(let i = 0; i< radioarray.length; i++){
+        var element = radioarray[i].nativeElement;
         if(element.checked){
             let item = element.getAttribute("value");
             let index:number = pages.indexOf(item);
             if(left){//increent index left
+              console.log("increment left "+index)
               index -= 1;
-              if(index<0){index = 0;}
+              if(index<0){index = pages.length-1;}
             }
             else{//increment index right
+              console.log("increment right "+index)
               index+=1;
               if(index>=pages.length){
-                index = pages.length-1;
+                index = 0;
               }
             }
             these.setSelectedValue(pages[index]);
             these.radioSelected(pages[index]);
+            break;
         }
-      }
-    )
+    }
+    
   }
   
 
   radioSelected(item){
-
+    console.log("radio selected:", item);
+    let these = this;
     this.contentChildren.forEach(
       function(pageItem: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
+        console.log(pageItem.pageId+"=="+ item)
           if(pageItem.pageId == item){
             pageItem.className = "visible";
+            these.background = "url("+pageItem.backgroundImage+")";
+            console.log("img:"+these.background);
           }
           else{
             pageItem.className = "gone";

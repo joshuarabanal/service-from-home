@@ -13,6 +13,7 @@ import { Parallax } from './basic-components/parallax/parallax.component';
 import { PageParallaxComponent } from './basic-components/page/page-parallax/page-parallax.component';
 import { ActionBannerComponent } from './basic-components/action-banner/action-banner.component';
 import { SlideShowComponent, SlideShowPageComponent } from './basic-components/slide-show/slide-show.component';
+import { PageSection } from './basic-components/page/page-section/page-section.component';
 
 
 
@@ -27,7 +28,7 @@ import { SlideShowComponent, SlideShowPageComponent } from './basic-components/s
     AppComponent,
 
     //basic-components/
-    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent, ActionBannerComponent , SlideShowComponent, SlideShowPageComponent
+    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent, ActionBannerComponent , SlideShowComponent, SlideShowPageComponent, PageSection
 
   ],
   bootstrap:    [ AppComponent ]

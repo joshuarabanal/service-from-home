@@ -1,14 +1,12 @@
-<div style="background" [style.background-image] = "getBackground()">
+<div class="background" style="background" [style.background-image] = "background">
 <div class="slideBox"> 
-  <img 
-  style="transform:Rotate(90deg);"
+  <img
   src="https://www.pngitem.com/pimgs/m/10-101221_down-arrow-png-image-background-down-arrow-icon.png"
-  (click)="arrowClick(true)"/>
-  <div style="width:100%;">
+  (click)="arrowClick('true')"/>
+  <div  style="width:100%;">
     <ng-content #contentChildren></ng-content>
   </div>
   <img
-    style="transform:Rotate(-90deg);"
     src="https://www.pngitem.com/pimgs/m/10-101221_down-arrow-png-image-background-down-arrow-icon.png"
    (click)="arrowClick(false)"/>
 </div>

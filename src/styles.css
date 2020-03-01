@@ -13,6 +13,7 @@
 body {
   margin: 0;
   background-color:#e8d4c2; 
+  color: #1d1a1a;
 }
 
 p, div, li{
@@ -33,6 +34,7 @@ router-outlet + *  {
 
 h1 {
   font-size: 32px;
+  color:inherit;
 }
 
 h2 {

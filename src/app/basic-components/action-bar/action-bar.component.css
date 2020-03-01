@@ -9,8 +9,8 @@ can be found in the LICENSE file at http://angular.io/license
   top:0;
   left:0;
   width: 100%;
-  height: 68px;/*
-  background-color:var(--action-bar-background, #1976d2);*/
+  height: 68px;
+ background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.24) 50%, rgba(255,255,255,0.0) 100%);
   padding: 16px;
   display: block;
   flex-direction: row;
@@ -28,12 +28,12 @@ can be found in the LICENSE file at http://angular.io/license
 @keyframes colorchange
     {
       0%   {
-          background: transparent;
+          background-color: #00000000;
           color:black;
         }
 
       100% {
-        background: var(--action-bar-background, #1976d2);
+        background-color: var(--action-bar-background, #1976d2);
         color:  var(--action-bar-text-color,white);
         }
     }

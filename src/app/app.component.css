@@ -1,0 +1,14 @@
+.slideVerticalCenter{
+    position: absolute;
+    bottom: 25%;
+    top: 40%;
+    left: 0;
+    right: 0;
+    width: calc(100% - 160px);
+    margin: 0 80px 0 80px;
+}
+.greyHighlight{
+  text-align:center;
+  background-color: #afa8a83d;
+    padding: 20px;
+}
