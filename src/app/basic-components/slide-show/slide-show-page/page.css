@@ -1,6 +1,18 @@
+:host{
+
+    width:100%;
+}
 .visible{
-  background-color: red;
+  height:100%;
+  width: 100%;
+  background-color:green;
+  display: block;
+    visibility: inherit;
 }
 .gone{
-  background-color: green;
+  width:0;
+  height:0;
+  background-color:red;
+  display:block;
+  visibility: hidden;
 }

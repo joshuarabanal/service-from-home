@@ -1,13 +1,11 @@
-import { Component, OnInit, Directive, ViewChildren, QueryList, Input , ContentChildren, } from '@angular/core';
+import { Component, Directive, ViewChildren, 
+          QueryList, Input , ContentChildren, 
+          AfterContentInit, AfterViewInit, ElementRef
+        } from '@angular/core';
 
 
-@Directive({
-  selector: '[page-id]'
-})
-export class PageIds {
-}
 
-
+//this is the class for the individual slideshow pages 
 @Component({
   selector: 'slide-show-page',
   templateUrl:'./slide-show-page/page.html',
@@ -23,70 +21,66 @@ export class SlideShowPageComponent {
   }
 
 }
-/*
-@Directive({selector: 'input'})
-class Slide {
+
+//used to mark each radio button
+@Directive({selector: 'radioitem'})
+export class InputRadio {
 }
-*/
 
-
+//made with: https://www.youtube.com/watch?v=GjcHAXNwPYM
+//the entire slideshow window
 @Component({
   selector: 'slide-show',
   templateUrl: './slide-show.component.html',
   styleUrls: ['./slide-show.component.css']
 })
-export class SlideShowComponent implements OnInit {
+export class SlideShowComponent implements AfterViewInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
-  @ViewChildren("radioItem") pages: QueryList<any>
+  @ViewChildren("radioitem") radioButtons: QueryList<ElementRef>
   @ContentChildren(SlideShowPageComponent) contentChildren !: QueryList<SlideShowPageComponent>;
-  @ContentChildren(PageIds) pageIds !: QueryList<PageIds>;
+
+  ngAfterViewInit() { 
+    if(this.radioButtons.length == 0){//if there are no radio buttons
+      var hasInitialized = false;
+      this.radioButtons.changes.subscribe((item) => { 
+        if(hasInitialized){
+          return;
+        }
+        else{
+          this.radioButtons.toArray()[0].nativeElement.click();
+        }
+     });
+    }
+    else{
+      this.radioButtons.toArray()[0].nativeElement.click();
+    }
+    
+  }
 
   getPages(): any[]{
     return JSON.parse(this.page);
   }
 
-  getLength(){
-    return this.getPages().length;
-  }
-
+  
 
   radioSelected(index, item){
-    console.log("radio selected:"+item);
-    console.log("pages", this.pages);
-    console.log("content childs:",this.contentChildren)
+    console.log("radioButtons click", this.radioButtons);
 
     this.contentChildren.forEach(
-      function(item: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
-          console.log("loop")
-          console.log("item["+index+"]:", item);
-          if(item.pageId == item){
-            item.className = "visible";
-            console.log("found item:", item)
+      function(pageItem: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
+          if(pageItem.pageId == item){
+            pageItem.className = "visible";
           }
           else{
-            console.log(item.pageId+"!="+item);
-            item.className = "gone";
+            pageItem.className = "gone";
           }
       }
     );
 
   }
 
- // @ViewChildren(Slide) slides !: QueryList<Slide>;
-/*
-  getLength(){ 
-    if(!this.slides){
-      return -1;
-    }
-    return this.slides.length;
-    }
-    */
+  
 
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

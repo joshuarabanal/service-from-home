@@ -1,13 +1,17 @@
 
-<h1> hello world and all who inhabit it</h1>
-<div>length: {{getLength()}}</div>
-<div>page: {{page}}</div>
-<p>info: {{info}}</p>
-  <input #radioItem *ngFor="let item of getPages(); let i = index" 
+<div class="slideBox"> 
+  <button >previous</button>
+  <div style="width:100%;">
+    <ng-content #contentChildren></ng-content>
+  </div>
+  <button>next</button>
+</div>
+<div class="radioGroup">
+  <input *ngFor="let item of getPages(); let i = index" 
+      #radioitem 
       type="radio" 
       name="group" 
       (click)="radioSelected(i,item)"/>
-  <div > test</div>
-  <ng-content #contentChildren></ng-content>
+  </div>
 
 

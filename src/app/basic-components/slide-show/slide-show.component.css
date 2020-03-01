@@ -1,0 +1,18 @@
+:host{
+  width:100%;
+  display:block;
+
+}
+.slideBox{
+  display:flex;
+  flex-wrap:  nowrap;
+
+}
+.radioGroup{
+  display:flex;
+  flex-wrap:  nowrap;
+  margin:auto;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+}
