@@ -4,13 +4,12 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */
 #actionbar {
-  color: black;
   position:fixed;
   top:0;
   left:0;
+  color: black;
   width: 100%;
   height: 68px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.24) 50%, rgba(255,255,255,0.0) 100%);
   padding: 16px;
   display: block;
   flex-direction: row;
@@ -23,7 +22,7 @@ can be found in the LICENSE file at http://angular.io/license
   display:block;
 }
 .transparent{
-  background:transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.24) 50%, rgba(255,255,255,0.0) 100%);
 }
 @keyframes colorchange
     {
@@ -42,6 +41,12 @@ can be found in the LICENSE file at http://angular.io/license
         background: var(--action-bar-background, #1976d2);
         color:white; /* var(--action-bar-text-color,white);*/
   /*background-color:var(--action-bar-background, #1976d2);*/
+}
+.nofade{
+        background: var(--action-bar-background, #1976d2);
+        color:white;
+  position: initial;
+
 }
 img{
   float: left;

@@ -1,4 +1,6 @@
-<action-bar title="Join our Team"></action-bar>
+<action-bar disable-fade="true" title="Join our Team">
+  <action-button title="Home Page" href=""></action-button>
+</action-bar>
 
 
 <form action="https://ar9jod5nb9.execute-api.us-east-1.amazonaws.com/prod/delete_test" method="get">
@@ -24,15 +26,16 @@
      
   </page>
   
-  <page title="resume">
+  <page-parallax
+      img="https://www.servicefromhome.com/images/banner.jpg" 
+      color-filter="#a2a2a280" 
+      title="resume">
     <div style="width:400px; margin:auto;">
       <label>
         Resume: <input type="file" name="resume" accept="application/pdf, text/plain, application/docx">
       </label>
     </div>
-    
-    
-  </page>
+  </page-parallax>
   
   
   <page title="Reference(Optional)">

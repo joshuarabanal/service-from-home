@@ -18,8 +18,8 @@ import { PageSection } from './basic-components/page/page-section/page-section.c
 
 
 //individual pages
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { SignUpComponent } from './navigation/sign-up/sign-up.component';
+import { MainPageComponent } from './navigation/main-page/main-page.component';
 
 
 

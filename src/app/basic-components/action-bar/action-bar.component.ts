@@ -10,12 +10,16 @@ export class ActionBarComponent implements OnInit {
   @Input("action-icon") actionIcon: string[];
   @Input("disable-fade") disableFade : boolean;
   @Input("add-spacer") addSpacer: boolean;
-  actionbarClass: string = "transparent";
+  actionbarClass: string;
   //@Input("menu-item-names") menuNames: string[];
+  
+ 
+
 
   //@Input("menu-item-links") nemuLinks: string;
   @HostListener("window:scroll", [])
     onWindowScroll() {
+      if(this.disableFade){ return; }
       this.updateScroll();
     }
     updateScroll(){
@@ -28,10 +32,17 @@ export class ActionBarComponent implements OnInit {
     }
 
   constructor() {
-      this.updateScroll();
+      
   }
 
   ngOnInit() {
+      this.updateScroll();
+      if(this.disableFade){
+        this.addSpacer = true;
+      }
+    console.log("disable fade:"+this.disableFade);
+        this.actionbarClass =  this.disableFade? "nofade" : "transparent";
+      
   }
 
 }

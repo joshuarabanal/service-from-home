@@ -1,5 +1,6 @@
-<div id="actionbar" [class]="disableFade? 'opaque': actionbarClass">
+<div id="actionbar" [class]="actionbarClass">
   <img *ngIf="actionIcon" src="{{actionIcon}}"/>
+  <title>{{title}}<
   <h1 >{{title? title : "Set title attribute"}}</h1>
 
 
@@ -9,4 +10,4 @@
 
 
 </div>
-<div *ngIf="addSpacer" class="spacer"></div>
+<div *ngIf="disableFade" class="spacer"></div>
