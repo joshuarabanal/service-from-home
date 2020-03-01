@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -16,19 +17,29 @@ import { SlideShowComponent, SlideShowPageComponent } from './basic-components/s
 import { PageSection } from './basic-components/page/page-section/page-section.component';
 
 
+//individual pages
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { MainPageComponent } from './main-page/main-page.component';
+
+
 
 
 
 @NgModule({
   imports:      [ 
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: MainPageComponent },
+      //{path:"arise.html", component: AriseRoot},
+      {path:"signup", component: SignUpComponent}
+    ])
 
   ],
   declarations: [ 
     AppComponent,
 
     //basic-components/
-    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent, ActionBannerComponent , SlideShowComponent, SlideShowPageComponent, PageSection
+    ActionButton, ActionBarComponent, PageComponent, Parallax, PageParallaxComponent, ActionBannerComponent , SlideShowComponent, SlideShowPageComponent, PageSection, SignUpComponent, MainPageComponent
 
   ],
   bootstrap:    [ AppComponent ]

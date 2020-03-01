@@ -1,0 +1,54 @@
+<action-bar title="Join our Team"></action-bar>
+
+
+<form action="https://ar9jod5nb9.execute-api.us-east-1.amazonaws.com/prod/delete_test" method="get">
+    
+  <page title="Basic information">
+    <div style="width:400px; margin:auto;">
+      <label>
+        First name: <input type="text" name="firstname">
+      </label>
+      <br>
+      <label>
+        Last name: <input type="text" name="lastname">
+      </label>
+      <br>
+      <label>
+        Phone number: <input type="number" maxlength="12" name="phonenumber">
+      </label>
+      <br>
+      <label>
+        Email address: <input type="email" name="emailaddress">
+      </label>
+    </div>
+     
+  </page>
+  
+  <page title="resume">
+    <div style="width:400px; margin:auto;">
+      <label>
+        Resume: <input type="file" name="resume" accept="application/pdf, text/plain, application/docx">
+      </label>
+    </div>
+    
+    
+  </page>
+  
+  
+  <page title="Reference(Optional)">
+    
+    <div style="width:400px; margin:auto;">
+      <label>
+        Full Name: <input type="text" name="referencename">
+      </label>
+      <br>
+      <label>
+        Email Address: <input type="email" name="referenceemail">
+      </label>
+    </div>
+    
+  </page>
+  
+  <action-banner title="get started" button-title="sign up now"></action-banner>
+  
+  </form>

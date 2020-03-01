@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent  {
   name = 'Angular';
 
-   getAsset(url:string){
-    return "https://s3.amazonaws.com/assets.composemusic.org/arise/"+url+"";
-  }
+ 
 }
