@@ -1,17 +1,25 @@
-
+<div style="background" [style.background-image] = "getBackground()">
 <div class="slideBox"> 
-  <button (click)="arrowClick(true)">previous</button>
+  <img 
+  style="transform:Rotate(90deg);"
+  src="https://www.pngitem.com/pimgs/m/10-101221_down-arrow-png-image-background-down-arrow-icon.png"
+  (click)="arrowClick(true)"/>
   <div style="width:100%;">
     <ng-content #contentChildren></ng-content>
   </div>
-  <button (click)="arrowClick(false)">next</button>
+  <img
+    style="transform:Rotate(-90deg);"
+    src="https://www.pngitem.com/pimgs/m/10-101221_down-arrow-png-image-background-down-arrow-icon.png"
+   (click)="arrowClick(false)"/>
 </div>
 <div class="radioGroup">
-  <input *ngFor="let item of getPages(); let i = index" 
+  <input *ngFor="let item of getPages()" 
       #radioitem 
       type="radio" 
       name="group" 
-      (click)="radioSelected(i,item)"/>
+      value="{{item}}"
+      (click)="radioSelected(item)"/>
   </div>
+</div>
 
 

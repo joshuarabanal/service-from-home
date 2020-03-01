@@ -16,3 +16,13 @@
   justify-content: center;
   width:100%;
 }
+
+img{
+  margin-top: auto;
+  margin-bottom: auto;
+  width:100px;
+  height: 51px;
+}
+.background{
+  display:block;
+}
