@@ -1,4 +1,4 @@
-import { Component, Directive, ViewChildren, 
+import { Component, Directive, ViewChildren, ViewChild,
           QueryList, Input , ContentChildren, 
           AfterContentInit, AfterViewInit, ElementRef
         } from '@angular/core';
@@ -13,13 +13,22 @@ import { Component, Directive, ViewChildren,
   styleUrls:['./slide-show-page/page.css']
 })
 export class SlideShowPageComponent {
-  active:boolean;
-  public className:string;
+  private className:string = "gone";
   @Input("page-id") pageId;
   @Input("background-image") backgroundImage;
-  getElemClass(){ return this.active? "visible": "gone"; }
-  constructor(){
-    this.className = "gone";
+
+  ngAfterViewInit(){
+      let imgs = new Image();
+      imgs.src = this.backgroundImage;
+  }
+
+  setVisible(visible:boolean){
+    if(visible){ 
+      this.className = "visible";
+    }
+    else{ 
+      this.className = "gone";
+    }
   }
 
 }
@@ -36,29 +45,20 @@ export class InputRadio {
   templateUrl: './slide-show.component.html',
   styleUrls: ['./slide-show.component.css']
 })
-export class SlideShowComponent implements AfterViewInit {
+export class SlideShowComponent implements AfterViewInit, AfterContentInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
    background:string;
   @ViewChildren("radioitem") radioButtons: QueryList<ElementRef>
   @ContentChildren(SlideShowPageComponent) contentChildren !: QueryList<SlideShowPageComponent>;
 
+  ngAfterContentInit(){
+    let child:SlideShowPageComponent = this.contentChildren.toArray()[0];
+    this.background = "url("+child.backgroundImage+")";
+    child.setVisible(true);
+  }
   ngAfterViewInit() { 
-    if(this.radioButtons.length == 0){//if there are no radio buttons
-      var hasInitialized = false;
-      this.radioButtons.changes.subscribe((item) => { 
-        if(hasInitialized){
-          return;
-        }
-        else{
-          this.radioButtons.toArray()[0].nativeElement.click();
-        }
-     });
-    }
-    else{
       this.radioButtons.toArray()[0].nativeElement.click();
-    }
-    
   }
  
   getBackground():string{
@@ -133,12 +133,12 @@ export class SlideShowComponent implements AfterViewInit {
       function(pageItem: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
         console.log(pageItem.pageId+"=="+ item)
           if(pageItem.pageId == item){
-            pageItem.className = "visible";
+            pageItem.setVisible(true);
             these.background = "url("+pageItem.backgroundImage+")";
             console.log("img:"+these.background);
           }
           else{
-            pageItem.className = "gone";
+            pageItem.setVisible(false);
           }
       }
     );

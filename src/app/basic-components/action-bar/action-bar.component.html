@@ -1,10 +1,10 @@
 <div id="actionbar" [class]="actionbarClass">
   <img *ngIf="actionIcon" src="{{actionIcon}}"/>
-  <title>{{title}}<
+  <title>{{title}}</title>
   <h1 >{{title? title : "Set title attribute"}}</h1>
 
 
-  <div class="actionbuttonsBox"  >
+  <div class="actionbuttonsBox" > 
     <ng-content selector="[frame-body]"></ng-content> <!-- the inner html becomes the action menu buttons-->
   </div>
 
