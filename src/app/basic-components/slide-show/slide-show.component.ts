@@ -13,25 +13,20 @@ import { Component, Directive, ViewChildren, ViewChild,
   styleUrls:['./slide-show-page/page.css']
 })
 export class SlideShowPageComponent {
-  //active:boolean;
-  //public className:string;
+  private active:boolean = false;
+  public className:string = "gone";
   @Input("page-id") pageId;
   @Input("background-image") backgroundImage;
-  //@ViewChild("classholder" , {static:false}) classholder
-  //getElemClass(){ return this.active? "visible": "gone"; }
   private element:ElementRef;
+
   constructor(private elRef:ElementRef){
     console.log("element ref:", elRef);
     this.element = elRef;
   }
   setVisible(visible:boolean){
-    var className = "gone";
-    var removeClass = "visbile";
-    if(visible){ 
-      className = "visible";
-      removeClass = "gone";
-    }
-    this.element.nativeElement.classNames.add(className);
+    this.active = visible;
+    if(this.active){ this.className = "visible"; }
+    else{ this.className = "gone"; }
   }
 
 }
@@ -145,12 +140,12 @@ export class SlideShowComponent implements AfterViewInit {
       function(pageItem: SlideShowPageComponent, index: number, array: SlideShowPageComponent[]){
         console.log(pageItem.pageId+"=="+ item)
           if(pageItem.pageId == item){
-            pageItem.className = "visible";
+            pageItem.setVisible(true);
             these.background = "url("+pageItem.backgroundImage+")";
             console.log("img:"+these.background);
           }
           else{
-            pageItem.className = "gone";
+            pageItem.setVisible(false);
           }
       }
     );
