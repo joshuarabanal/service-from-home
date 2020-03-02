@@ -8,13 +8,14 @@
 .slideBox{
   display:flex;
   flex-wrap:  nowrap;
-  min-height: calc(100vh - 20px);
+  min-height: calc(100vh - 50px);
     height: auto;
     text-align: center;
     vertical-align: middle;
 
 }
 .radioGroup{
+    padding: 10px;
   display:flex;
   flex-wrap:  nowrap;
   margin:auto;
@@ -33,6 +34,6 @@ img{
   display:block;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;;
+  min-height: calc(100vh - 0px);
   height: auto;
 }
