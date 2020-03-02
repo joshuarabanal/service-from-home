@@ -1,4 +1,4 @@
-import { Component, Directive, ViewChildren, 
+import { Component, Directive, ViewChildren, ViewChild,
           QueryList, Input , ContentChildren, 
           AfterContentInit, AfterViewInit, ElementRef
         } from '@angular/core';
@@ -13,13 +13,25 @@ import { Component, Directive, ViewChildren,
   styleUrls:['./slide-show-page/page.css']
 })
 export class SlideShowPageComponent {
-  active:boolean;
-  public className:string;
+  //active:boolean;
+  //public className:string;
   @Input("page-id") pageId;
   @Input("background-image") backgroundImage;
-  getElemClass(){ return this.active? "visible": "gone"; }
-  constructor(){
-    this.className = "gone";
+  //@ViewChild("classholder" , {static:false}) classholder
+  //getElemClass(){ return this.active? "visible": "gone"; }
+  private element:ElementRef;
+  constructor(private elRef:ElementRef){
+    console.log("element ref:", elRef);
+    this.element = elRef;
+  }
+  setVisible(visible:boolean){
+    var className = "gone";
+    var removeClass = "visbile";
+    if(visible){ 
+      className = "visible";
+      removeClass = "gone";
+    }
+    this.element.nativeElement.classNames.add(className);
   }
 
 }
