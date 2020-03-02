@@ -26,23 +26,10 @@ export class SlideShowPageComponent {
   }
   private setClass(clas:string){
     this.className = clas;
-    /** 
-    var ele = this.element.nativeElement;
-    if(clas = "gone"){
-      var style = ele.style;
-      style.width = 0;
-      style.height = 0;
-      style.visibilier = "gone";
-    }
-    this.element.nativeElement.className = clas;
-    **/
   }
   setVisible(visible:boolean){
-      console.log("set visible["+v+"]:", this.element.nativeElement);
-    console.log("changed visibility:"+visible)
     this.active = visible;
     if(this.active){ 
-      console.log("made visible:", this.element.nativeElement);
       this.setClass("visible");
     }
     else{ this.setClass("gone");}
