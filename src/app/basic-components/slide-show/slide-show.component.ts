@@ -18,9 +18,10 @@ export class SlideShowPageComponent {
   @Input("background-image") backgroundImage;
 
   ngAfterViewInit(){
-
+      let imgs = new Image();
+      imgs.src = this.backgroundImage;
   }
-  
+
   setVisible(visible:boolean){
     if(visible){ 
       this.className = "visible";
