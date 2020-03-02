@@ -24,8 +24,12 @@ export class SlideShowPageComponent {
     this.element = elRef;
   }
   setVisible(visible:boolean){
+    console.log("changed visibility:"+visible)
     this.active = visible;
-    if(this.active){ this.className = "visible"; }
+    if(this.active){ 
+      console.log("made visible:", this.element)
+      this.className = "visible"; 
+    }
     else{ this.className = "gone"; }
   }
 
