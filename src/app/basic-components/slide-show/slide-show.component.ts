@@ -13,26 +13,17 @@ import { Component, Directive, ViewChildren, ViewChild,
   styleUrls:['./slide-show-page/page.css']
 })
 export class SlideShowPageComponent {
-  private active:boolean = false;
-  public className:string = "gone";
+  private className:string = "gone";
   @Input("page-id") pageId;
   @Input("background-image") backgroundImage;
-  private element:ElementRef;
 
-  constructor(private elRef:ElementRef){
-    console.log("element ref:", elRef);
-    this.element = elRef;
-    this.setClass("gone");
-  }
-  private setClass(clas:string){
-    this.className = clas;
-  }
   setVisible(visible:boolean){
-    this.active = visible;
-    if(this.active){ 
-      this.setClass("visible");
+    if(visible){ 
+      this.className = "visible";
     }
-    else{ this.setClass("gone");}
+    else{ 
+      this.className = "gone";
+    }
   }
 
 }
@@ -49,29 +40,20 @@ export class InputRadio {
   templateUrl: './slide-show.component.html',
   styleUrls: ['./slide-show.component.css']
 })
-export class SlideShowComponent implements AfterViewInit {
+export class SlideShowComponent implements AfterViewInit, AfterContentInit {
   @Input("page-ids") page : string;
   info:string = "nothing"
    background:string;
   @ViewChildren("radioitem") radioButtons: QueryList<ElementRef>
   @ContentChildren(SlideShowPageComponent) contentChildren !: QueryList<SlideShowPageComponent>;
 
+  ngAfterContentInit(){
+    let child:SlideShowPageComponent = this.contentChildren.toArray()[0];
+    this.background = "url("+child.backgroundImage+")";
+    child.setVisible(true);
+  }
   ngAfterViewInit() { 
-    if(this.radioButtons.length == 0){//if there are no radio buttons
-      var hasInitialized = false;
-      this.radioButtons.changes.subscribe((item) => { 
-        if(hasInitialized){
-          return;
-        }
-        else{
-          this.radioButtons.toArray()[0].nativeElement.click();
-        }
-     });
-    }
-    else{
       this.radioButtons.toArray()[0].nativeElement.click();
-    }
-    
   }
  
   getBackground():string{
