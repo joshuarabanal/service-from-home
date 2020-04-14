@@ -3,7 +3,8 @@
 </action-bar>
 
 
-<form action="https://usqjxreayc.execute-api.us-east-1.amazonaws.com/Production" method="PUT">
+<form 
+ [formGroup]="signupForm" (ngSubmit)="onSubmit(checkoutForm.value)">
     
   <page title="Basic information">
     <div style="width:400px; margin:auto;">
@@ -51,7 +52,6 @@
     </div>
     
   </page>
-  
   <action-banner title="get started" button-title="sign up now"></action-banner>
   
   </form>
