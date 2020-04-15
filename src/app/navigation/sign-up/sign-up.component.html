@@ -4,7 +4,7 @@
 
 
 <form 
- [formGroup]="signupForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+ [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     
   <page title="Basic information">
     <div style="width:400px; margin:auto;">
@@ -52,6 +52,8 @@
     </div>
     
   </page>
-  <action-banner title="get started" button-title="sign up now"></action-banner>
+  <action-banner title="get started" >
+    <input class="button" style="margin-left:auto;" type="submit" value="Sign up Now"/> 
+  </action-banner>
   
   </form>

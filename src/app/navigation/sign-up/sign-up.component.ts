@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,10 +7,10 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  private checkoutForm;
+  private signupForm;
   constructor(private formBuilder:FormBuilder) {
 
-    this.checkoutForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       firstname: '',
       lastname: '',
       phonenumber:'',
@@ -21,6 +21,21 @@ export class SignUpComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+  async onSubmit(){
+    let req: XMLHttpRequest = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Typical action to be performed when the document is ready:
+          window.alert(this.responseText);
+        }
+    };
+    req.open(
+      "PUT", 
+    " https://usqjxreayc.execute-api.us-east-1.amazonaws.com/Production/applications",
+    true
+    );
+    req.send(JSON.stringify(this.signupForm.value));
   }
 
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule, ReactiveFormsModule }from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 
@@ -28,12 +28,17 @@ import { MainPageComponent } from './navigation/main-page/main-page.component';
 @NgModule({
   imports:      [ 
     BrowserModule, FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: MainPageComponent },
       //{path:"arise.html", component: AriseRoot},
       {path:"signup", component: SignUpComponent}
     ])
 
+  ],
+  exports:[
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ 
     AppComponent,

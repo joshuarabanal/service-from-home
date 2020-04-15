@@ -1,4 +1,37 @@
+<div *ngIf="buttonTitle">
+  <h1> {{title}}</h1>
+  <a class="button" href="{{href}}">
+    {{buttonTitle}} 
+  </a>
+</div>
+
+<div *ngIf="!buttonTitle"> 
+  <h1> {{title}}</h1>
+  <div class="button" >
+    <ng-content selector="[frame-body]"></ng-content>
+  </div>
+</div>
+
+
+<!--
 <div>
   <h1> {{title}}</h1>
-  <a class="button" href="{{href}}">{{buttonTitle}} </a>
+
+  <ng-container
+  *ngIf="false; then loggedIn; else loggedOut">
+</ng-container>
+
+  <div #loggedIn >logged in </div>
+  <div #loggedOut>logged out </div>
+  <!--
+ <a *ngIf="href" class="button" href="{{href}}">
+    {{buttonTitle}} 
+  </a>
+  <div *else class="button">
+    <ng-content selector="[frame-body]"></ng-content>
+  </div>
+  
+ 
+  
 </div>
+-->

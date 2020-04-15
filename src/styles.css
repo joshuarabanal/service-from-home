@@ -75,3 +75,18 @@ p {
   opacity: 0.5;
   cursor: auto;
 }
+.inheritEverything{
+
+    border:inherit;
+    background:inherit;
+    size: inherit;
+    font-size: inherit;
+    color: inherit;
+    display: inherit;
+    align-items: inherit;
+    padding: inherit;
+    border-radius: inherit;
+    cursor: inherit;
+    background-color: inherit;
+    text-decoration: none;
+}
